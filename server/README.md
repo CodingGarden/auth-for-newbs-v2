@@ -8,7 +8,6 @@
 - bcrypt: hashing package to keep passwords secret in your db
 - volleyball: http logger that makes it easy to read/debug in the console as we work
 
-
 #### Backend:
 To start: navigate to ./server
 - $ npm run dev (uses nodemon so i dont have to refresh)

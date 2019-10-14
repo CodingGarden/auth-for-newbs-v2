@@ -2,11 +2,14 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "seed:admin": "node tasks/createAdminUser.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "seed:admin": "node src/tasks/createAdminUser.js",
+    "lint": "eslint src/",
+    "test": "NODE_ENV=test mocha src/*.test.js src/**/*.test.js --watch",
+    "heroku-postbuild": "npm run seed:admin"
   },
   "keywords": [],
   "author": "",
@@ -19,9 +22,16 @@
     "express": "^4.17.1",
     "helmet": "^3.21.1",
     "jsonwebtoken": "^8.5.1",
+    "monk": "^7.1.1",
     "volleyball": "^1.5.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.2"
+    "chai": "^4.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.1",
+    "nodemon": "^1.19.2",
+    "supertest": "^4.0.2"
   }
 }
